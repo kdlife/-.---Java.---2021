@@ -3,12 +3,21 @@ package firstChapter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import firstChapter.SortArrayOfStringsByLength.Sort;
+
 public class Test {
-private static final String TEXT="d d ! q q wwe3e9"; // тестовый текст
-private static final String TEXT2="Dima"; // тестовый текст
-private static final String TEXT3="VANAYA"; // тестовый текст
+private static final String TEXT="dd ! q q  w    e      e   e  e  e3e9"; // тестовый текст
+private static final String TEXT2="Dimaddfa"; // тестовый текст
+private static final String TEXT3="VANAYA"; 
+private static final String TEXT4="ada"; // тестовый текст
+private static final String TEXT5="111111";
+private static final String TEXT6="11";
+private static final String TEXT7="daad";
+private static final String TEXT8="adda";
+public static String[] masText= {"Dima","Vasha","Igor", "Andreu","Tolic","Paha"};
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println("text ----" + TEXT);
@@ -70,9 +79,46 @@ String joins2=joinString.joinStringV2('/', TEXT,TEXT2,TEXT3);
 System.out.println("Соедтяем строки"  +joins2);
 String join3=String.join("//", TEXT,TEXT2,TEXT3);//  как по мне самый удобный способ соединять строки
 System.out.println("Соедтяем строки"  +join3);
+rekurs.rekursPrint(TEXT3);
+System.out.println("-----------------------");
+Set <String> test2=rekurs.rekursSet(TEXT3);
+System.out.println("-----------------------");
+System.out.print(test2);
+displayExecutionTime(System.nanoTime()-startTime);	
 
-
-
+boolean checkPalindrome=isPalindrome.checkPalindrome(TEXT4);
+System.out.println("Проверяем на палиндром"+checkPalindrome);
+boolean checkPalindrome2=isPalindrome.checkPalindrome2(TEXT3);
+System.out.println("Проверяем на палиндром"+checkPalindrome2);
+boolean checkPalindrome3=isPalindrome.checkPalindrome3(TEXT4);
+System.out.println("Проверяем на палиндром"+checkPalindrome3);
+String deleteRep=deleteRepeatSymbol.deleteRep(TEXT);
+System.out.println("Пробуем удалить повторяющиеся символы в строке через сет"+deleteRep);
+String deleteRep2=deleteRepeatSymbol.removeDublicate(TEXT);
+System.out.println("Пробуем удалить повторяющиеся символы в строке через сет"+deleteRep2);
+String deleteRep3=deleteRepeatSymbol.removeDublicateV2(TEXT);
+System.out.println("Пробуем удалить повторяющиеся символы в строке через сет"+deleteRep3);
+displayExecutionTime(System.nanoTime()-startTime);	
+String deleteChar=deleteSymbol.deleteV1(TEXT, 'd');
+System.out.println("Удаляем заданый символ из  строки" + deleteChar);
+String deleteChar2=deleteSymbol.deleteV2(TEXT, 'd');
+System.out.println("Удаляем заданый символ из  строки" + deleteChar2);
+displayExecutionTime(System.nanoTime()-startTime);
+String deleteChar3=deleteSymbol.deleteV3(TEXT, 'd');
+System.out.println("Удаляем заданый символ из  строки" + deleteChar3);
+Pair count1=maxOccurenceCharacter.maxCountCharacter(TEXT);
+System.out.println(count1.consonants +"     " +count1.vowels );
+System.out.println("Исходный массисв строк"+Arrays.toString(masText));
+SortArrayOfStringsByLength.SortString(masText, Sort.ASC);
+System.out.println("после сортировки "+ Arrays.toString(masText));
+System.out.println("проверяем есть ли в строке подсстрока" + SubText.SubTextCheck(TEXT2, TEXT3));
+int counttext=CountSubText.CountText(TEXT5, TEXT6);
+System.out.println("подсчет колва совпадений в тексте все включения"+counttext);
+int counttext2=CountSubText.CountText2(TEXT5, TEXT6);
+System.out.println("подсчет колва совпадений в тексте"+counttext2);	
+int counttext3=CountSubText.CountText3(TEXT5, TEXT6);
+System.out.println("подсчет колва совпадений в тексте"+counttext3);		
+System.out.println("проверка на аттаграмму"+IsAnagram.anagramV1(TEXT7, TEXT8));		
 	}
 
 	private static void displayExecutionTime(long Time) {// метод для отображения времени работы прогррамм
