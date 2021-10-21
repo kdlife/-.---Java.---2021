@@ -2,6 +2,7 @@ package firstChapter;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -9,15 +10,17 @@ import java.util.concurrent.TimeUnit;
 import firstChapter.SortArrayOfStringsByLength.Sort;
 
 public class Test {
-private static final String TEXT="dd ! q q  w    e      e   e  e  e3e9"; // тестовый текст
+private static final String TEXT="                   dd ! q q  w    e         e   e  e  e3e9          "; // тестовый текст
 private static final String TEXT2="Dimaddfa"; // тестовый текст
-private static final String TEXT3="VANAYA"; 
+private static final String TEXT3="VANAYA "; 
 private static final String TEXT4="ada"; // тестовый текст
 private static final String TEXT5="111111";
 private static final String TEXT6="11";
 private static final String TEXT7="daad";
 private static final String TEXT8="adda";
-public static String[] masText= {"Dima","Vasha","Igor", "Andreu","Tolic","Paha"};
+private static final String LS=System.lineSeparator();
+public static String[] masText= {"Dima","DVasha","DIgor", "DAndreu","DTolic","DPaha", "Di"};
+private static String[] texts = {"Axbc", "Acbcd", "Avbcde", "Agbfb", "Akbcd", "Aibcdef"};
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println("text ----" + TEXT);
@@ -118,7 +121,40 @@ int counttext2=CountSubText.CountText2(TEXT5, TEXT6);
 System.out.println("подсчет колва совпадений в тексте"+counttext2);	
 int counttext3=CountSubText.CountText3(TEXT5, TEXT6);
 System.out.println("подсчет колва совпадений в тексте"+counttext3);		
-System.out.println("проверка на аттаграмму"+IsAnagram.anagramV1(TEXT7, TEXT8));		
+System.out.println("проверка на аттаграмму"+IsAnagram.anagramV1(TEXT7, TEXT8));	
+
+String TextLot="""
+пишем много строк
+и они все добоавляется
+и добовляемтся,
+так как стоят тройныйе ковычки""";
+// важно ставить после тройных ковыечек  энетр иначе не работает
+System.out.println(TextLot);
+// or
+String TextLot2="пишем строки"+LS+"соединяем с переходом на"+LS+"новую строку"+LS+"используя System.lineSeparator()";
+System.out.println(TextLot2);
+displayExecutionTime(System.nanoTime()-startTime);
+System.out.println("соединяем строку несколько раз " + ConcatRep.conRepV1(TEXT3, 5));
+System.out.println("соединяем строку несколько раз " + ConcatRep.conRepV2(TEXT3, 5));
+String testTrip=StrimSpace.stripText2(TEXT);
+System.out.println("удаляем все пробелыв начале и концк " + testTrip);
+String testTrip2=StrimSpace.stripText(TEXT);
+System.out.println("удаляем все пробелы в начале и концк " + testTrip2);
+String prefixMax=FindLongPrefix.FindLongPrefixV1(texts);
+System.out.println(" макс префикс" +Arrays.toString(texts)+" pref   " +  prefixMax);
+
+String prefixMax2=FindLongPrefix.FindLongPrefixV1(masText);
+System.out.println(" макс префикс" +Arrays.toString(masText) + "    pe  " + prefixMax2);
+
+String testIndent="Dima\n"+"Vasa\n"+"dura\n";
+System.out.print(testIndent.indent(10)); // добавляем пробелы меодом .indent(10))
+List <String> name=Arrays.asList("Dima", "Dura", "Vasia", "rffad","roma");
+ for (int i = 0; i<name.size();i++) {
+	 System.out.print(name.get(i).indent(i*2));//indent так де добовляет переход на новую строку
+ }
+ System.out.println("Выведем в ява 8, в зависимости от длинны строки меняем длину отступа");
+ name.stream()
+ .forEachOrdered(n->System.out.print(n.indent(n.length())));
 	}
 
 	private static void displayExecutionTime(long Time) {// метод для отображения времени работы прогррамм
