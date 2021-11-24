@@ -85,6 +85,7 @@ public class test {
 	 System.out.println("All is OK, User created");
  		}
  else printConstraintViolations("Violations : ", violations);
+ System.out.println(user2.toString());
  	}
 
 	private static<T> void printConstraintViolations(String caption, Set<ConstraintViolation<T>> violations) {

@@ -81,4 +81,9 @@ public static final class UserBuilders {// создаем страителя к�
 		return new Date(created.getTime());
 		
 	}
+	@Override
+	public String toString() {
+		return "UserBuilder{"+"firstName" +firstName + "Lastname "+ lastName+"date"+created+"email"+email+'}';
+	}
+	
 }
