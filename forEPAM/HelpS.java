@@ -180,6 +180,14 @@ return mass;}
        } 
      });  // End of function call sort(). 
  }
+public static int[] fillRandomMassiv(int[] mass) {
+	 for (int i=0; i<mass.length;i++) {
+		mass[i]=(int)(Math.random()*15);
+	 }
+		System.out.println(Arrays.toString(mass));
+		return mass;
+	
+}
  
  
  
