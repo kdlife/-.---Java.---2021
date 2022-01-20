@@ -111,6 +111,13 @@ return mass;}
 			return getNum();
 		}
  	}
+ public static int getNumRandom() {
+	 int num=(int)(Math.random()*15)+1;
+	 
+			System.out.println("Generate NUM"+num);
+			return num;
+		}
+ 	
  public static int [][]Fill(int [][]mass){
 	 for (int i=0; i<mass.length;i++) {
 			for(int j=0; j<mass[i].length;j++) {
