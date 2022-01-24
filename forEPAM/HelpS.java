@@ -57,30 +57,36 @@ return mass;}
 return mass;}
 	public static void sortBubleOnStringDown(int[]mass ) {
 		int temp;
+		int count=0;
 		 for (int i=0; i<mass.length;i++) {
 				for(int j=0; j<mass.length;j++) {
 					    if (mass[i] >= mass[j]) {
 	                            temp = mass[i];
 	                            mass[i] = mass[j];
 	                            mass[j] = temp;
+	                            count++;
 					}
 				
 			}
-	 
+				
    }
+		 System.out.println("произведино замен "+ count);	
 }
 	public static void sortBubleOnStringUp(int[] mass) {
 		int temp;
+		int count=0;
 		 for (int i=0; i<mass.length;i++) {
 				for(int j=0; j<mass.length;j++) {
 					if (mass[i] <= mass[j]) {
                         temp = mass[i];
                         mass[i] = mass[j];
                         mass[j] = temp;
+                        count++;
 						}
 					}
 				
 			}
+		 System.out.println("произведино замен "+ count);
 	 
    }
 
