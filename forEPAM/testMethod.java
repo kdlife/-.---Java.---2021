@@ -17,11 +17,16 @@ public class testMethod {
 		System.out.println("num1="+firstNum+"num2="+secondNum+"num3="+num3+"num4="+num4+"NOD4="+nod4);
 		double hexagonArea=Task3Method.hexagonTryArea(firstNum);
 		System.out.println("HexagonArea with button="+firstNum+" Area = "+hexagonArea);
-		Pair []mass=new Pair[HelpS.getNumRandom()];
+		
+		// Находим макс расстояние на плосткости между двумя точками
+		Point []mass=new Point[HelpS.getNumRandom()];
 		for(int i=0;i<mass.length;i++) {
-			mass[i]=new Pair(HelpS.getNumRandom(),HelpS.getNumRandom());
+			mass[i]=new Point(HelpS.getNumRandom(),HelpS.getNumRandom());
 		}
-		System.out.println(Arrays.toString(mass));			
+		System.out.println(Arrays.toString(mass));
+		Point.findMaxDistance(mass);
+	//	double distance=Point.Distance(mass[0], mass[1]);
+		//System.out.println("Максимальное расстояние"+distance );
 	}
 
 }
