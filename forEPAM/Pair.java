@@ -20,6 +20,11 @@ public final class Pair<V, C> {
     public int hashCode() {
         return var1.hashCode() ^ var2.hashCode();
     }
+    @Override
+	public String toString() {
+		return var1+"||"+var2;
+		
+	}
 
     @Override
     public boolean equals(Object o) {
