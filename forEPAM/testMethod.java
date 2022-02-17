@@ -25,8 +25,32 @@ public class testMethod {
 		}
 		System.out.println(Arrays.toString(mass));
 		Point.findMaxDistance(mass);
-	//	double distance=Point.Distance(mass[0], mass[1]);
-		//System.out.println("Максимальное расстояние"+distance );
+		// find second element
+		var test5Max= new int[HelpS.getNumRandom()];
+		HelpS.fillRandomMassiv(test5Max);
+		int testSecondMax=Task5MaxSecondMethod.secondMax(test5Max);
+		System.out.println(Arrays.toString(test5Max)+"Second element"+testSecondMax);
+		int []test6Nod=new int [3];
+		// 3numPrime
+		HelpS.fillRandomMassiv(test6Nod);
+		System.out.print(Task6Method.checkNODPrime(test6Nod)+" эти числа "+Task6Method.checkNODPrime(10,20,5,10));
+	//find factorial
+		System.out.println();
+		int fact=9;
+		Task7Method.sumFac(fact);
+		//
+		int[]massiv=new int[10];
+		HelpS.fillRandomMassiv(massiv);
+		// сумма 3хпоследовательных эл от k -n
+		var task8=Task8Method.sum3kn(massiv, 5, massiv.length-1);
+		System.out.println(task8);
+		// площадь 4-х угольника в которого можно вписать окружность
+		double area=Task9Method.areaFourAngle(5, 4, 3, 6);
+		System.out.println(area);
+		// расскладываем число по цифрам
+		int numChar=1269587953;
+		char[] num=Task10Method.charNum(numChar);
+		System.out.println("Number"+numChar+"include"+Arrays.toString(num));
 	}
 
 }
